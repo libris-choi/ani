@@ -20,6 +20,7 @@ options.add_argument("--disable-features=ChromeWhatsNewUI")
 # remove "Chrome is being controlled by automated test software" notification
 # remove "Disable developer mode extensios" notification
 options.add_experimental_option("excludeSwitches", ['enable-automation', 'load-extension'])
+options.add_experimental_option("detach", True)
 
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
@@ -81,7 +82,6 @@ try:
 except NoSuchElementException:
     None
 
-# 한시간
-time.sleep(3600)
-driver.quit()
-sys.exit()
+#time.sleep(3600)
+#driver.quit()
+#sys.exit()
